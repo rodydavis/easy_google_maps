@@ -2,13 +2,29 @@
 
 A new flutter plugin project.
 
+## Mobile Setup
+
+Follow setup for Mobile [Here](https://pub.dev/packages/google_maps_flutter)
+
+## Web
+
+Good to go!
+
 ## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+```dart
+EasyGoogleMaps(
+    apiKey: 'YOUR_API_KEY_HERE',
+    address: 'Infinite Loop, Cupertino, CA 95014',
+    title: 'Apple Campus',
+)
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- When you change the address the map will automatically move the camera position to the new marker
+- Optionally give a width and height
+- API Key is Required from [Google Maps](https://developers.google.com/maps/documentation/embed/get-api-key)
+
+## Screenshots
+
+![](/doc/screenshots/1.png)
+![](/doc/screenshots/2.png)
