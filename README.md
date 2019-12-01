@@ -26,5 +26,5 @@ EasyGoogleMaps(
 
 ## Screenshots
 
-![](/doc/screenshots/1.png)
-![](/doc/screenshots/2.png)
+![](https://github.com/rodydavis/easy_google_maps/blob/master/doc/screenshots/1.png?raw=true2
+![](https://github.com/rodydavis/easy_google_maps/blob/master/doc/screenshots/1.png?raw=true)
