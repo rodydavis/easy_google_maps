@@ -1,16 +1,16 @@
 # easy_google_maps
 
-A new flutter plugin project.
+Easy Google Maps for Flutter on Web and Mobile
 
-## Mobile Setup
+## Getting Started
+
+### Mobile
 
 Follow setup for Mobile [Here](https://pub.dev/packages/google_maps_flutter)
 
-## Web
+### Web
 
 Good to go!
-
-## Getting Started
 
 ```dart
 EasyGoogleMaps(
