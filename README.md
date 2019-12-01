@@ -12,6 +12,8 @@ Follow setup for Mobile [Here](https://pub.dev/packages/google_maps_flutter)
 
 Good to go!
 
+### Usage
+
 ```dart
 EasyGoogleMaps(
     apiKey: 'YOUR_API_KEY_HERE',
