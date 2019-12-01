@@ -9,6 +9,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="easy_google_maps_example"
         android:icon="@mipmap/ic_launcher">
+         <meta-data android:name="com.google.android.geo.AIzaSyB0Dj19FM22vue1Oqa91LJTiQIte3Vx70Y"
+               android:value="YOUR KEY HERE"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
