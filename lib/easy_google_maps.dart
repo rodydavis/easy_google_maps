@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-const kGoogleMapsKey = 'YOUR_API_KEY_HERE';
-
 class MapsView extends StatefulWidget {
   final String title;
   final String query;
   final num width, height;
+  final String apiKey;
 
   const MapsView({
     Key key,
     @required this.query,
     @required this.title,
+    @required this.apiKey,
     this.height,
     this.width,
   }) : super(key: key);
@@ -31,7 +31,7 @@ class _MapsViewState extends State<MapsView> {
   Widget build(BuildContext context) {
     if (kIsWeb) {
       final _src =
-          'https://www.google.com/maps/embed/v1/place?key=$kGoogleMapsKey&q=${widget.query.replaceAll(' ', '+')}';
+          'https://www.google.com/maps/embed/v1/place?key=${widget.apiKey}&q=${widget.query.replaceAll(' ', '+')}';
       return EasyWebView(
         src: _src,
         webAllowFullScreen: true,
@@ -79,8 +79,8 @@ class _MapsViewState extends State<MapsView> {
               markers: {_marker},
             );
           }
-          return LoadingView(
-            message: 'Loading Address..',
+          return Center(
+            child: Text('Loading Address..'),
           );
         },
       ),
