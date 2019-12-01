@@ -1,3 +1,4 @@
+import 'package:easy_google_maps_example/api_key.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_google_maps/easy_google_maps.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
           title: const Text('Plugin example app'),
         ),
         body: EasyGoogleMaps(
-          apiKey: 'YOUR_API_KEY_HERE',
+          apiKey: kGoogleMapsApiKey,
           address: '1 Infinite Loop',
           title: 'Apple Campus',
         ),
