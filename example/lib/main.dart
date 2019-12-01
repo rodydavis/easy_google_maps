@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Easy Google Maps'),
         ),
         body: EasyGoogleMaps(
           apiKey: kGoogleMapsApiKey,
-          address: '1 Infinite Loop',
+          address: 'Infinite Loop, Cupertino, CA 95014',
           title: 'Apple Campus',
         ),
       ),

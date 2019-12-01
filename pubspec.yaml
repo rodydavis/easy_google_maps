@@ -1,19 +1,19 @@
 name: easy_google_maps
 description: A new flutter plugin project.
 version: 0.0.1
-author:
-homepage:
-
+author: Rody Davis <rody.davis.jr@gmail.com>
+homepage: https://github.com/rodydavis/easy_google_maps
+issue_tracker: https://github.com/rodydavis/plugins/issues
+maintainer: Rody Davis (@AppleEducate)
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   google_maps_flutter: ^0.5.21+12
   geolocator: ^5.1.5
-  easy_web_view:
-    git: git://github.com/rodydavis/easy_web_view
+  easy_web_view: ^1.0.1
 
 dev_dependencies:
   flutter_test:

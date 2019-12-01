@@ -74,12 +74,10 @@ packages:
   easy_web_view:
     dependency: transitive
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "619da8cfec93c11b1c5d8d92216ae7e597e13f04"
-      url: "git://github.com/rodydavis/easy_web_view"
-    source: git
-    version: "1.0.0+3"
+      name: easy_web_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   flutter:
     dependency: "direct main"
     description: flutter

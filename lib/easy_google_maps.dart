@@ -28,6 +28,33 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
   Completer<GoogleMapController> _controller = Completer();
 
   @override
+  void didUpdateWidget(EasyGoogleMaps oldWidget) {
+    if (oldWidget.address != widget.address) {
+      if (kIsWeb) {
+        if (mounted) setState(() {});
+      } else {
+        _goToLoc(widget.address);
+      }
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  Future _goToLoc(String address) async {
+    final GoogleMapController controller = await _controller.future;
+    final _places = await Geolocator().placemarkFromAddress(address);
+    if (_places != null && _places.isNotEmpty) {
+      final _place = _places?.first;
+      final _latLang = LatLng(
+        _place.position.latitude,
+        _place.position.longitude,
+      );
+      controller.animateCamera(
+        CameraUpdate.newCameraPosition(_getPos(_latLang)),
+      );
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     if (kIsWeb) {
       final _src =
@@ -44,8 +71,7 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
       width: widget?.width,
       height: widget?.height,
       child: FutureBuilder<List<Placemark>>(
-        future:
-            Geolocator().placemarkFromAddress("Gronausestraat 710, Enschede"),
+        future: Geolocator().placemarkFromAddress(widget.address),
         builder: (_, snapshot) {
           if (snapshot.hasData) {
             final _place = snapshot?.data?.first;
@@ -69,10 +95,7 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
             return GoogleMap(
               myLocationEnabled: true,
               mapType: MapType.hybrid,
-              initialCameraPosition: CameraPosition(
-                target: _latLang,
-                zoom: 14.4746,
-              ),
+              initialCameraPosition: _getPos(_latLang),
               onMapCreated: (controller) {
                 _controller.complete(controller);
               },
@@ -84,6 +107,13 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
           );
         },
       ),
+    );
+  }
+
+  CameraPosition _getPos(LatLng _latLang) {
+    return CameraPosition(
+      target: _latLang,
+      zoom: 14.4746,
     );
   }
 }
