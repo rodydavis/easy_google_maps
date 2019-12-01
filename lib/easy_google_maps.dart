@@ -6,32 +6,32 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapsView extends StatefulWidget {
+class EasyGoogleMaps extends StatefulWidget {
   final String title;
-  final String query;
+  final String address;
   final num width, height;
   final String apiKey;
 
-  const MapsView({
+  const EasyGoogleMaps({
     Key key,
-    @required this.query,
+    @required this.address,
     @required this.title,
     @required this.apiKey,
     this.height,
     this.width,
   }) : super(key: key);
   @override
-  _MapsViewState createState() => _MapsViewState();
+  _EasyGoogleMapsState createState() => _EasyGoogleMapsState();
 }
 
-class _MapsViewState extends State<MapsView> {
+class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
   Completer<GoogleMapController> _controller = Completer();
 
   @override
   Widget build(BuildContext context) {
     if (kIsWeb) {
       final _src =
-          'https://www.google.com/maps/embed/v1/place?key=${widget.apiKey}&q=${widget.query.replaceAll(' ', '+')}';
+          'https://www.google.com/maps/embed/v1/place?key=${widget.apiKey}&q=${widget.address.replaceAll(' ', '+')}';
       return EasyWebView(
         src: _src,
         webAllowFullScreen: true,
@@ -59,11 +59,11 @@ class _MapsViewState extends State<MapsView> {
               _place.position.longitude,
             );
             final _marker = Marker(
-              markerId: MarkerId(widget.query.toString()),
+              markerId: MarkerId(widget.address.toString()),
               position: _latLang,
               infoWindow: InfoWindow(
                 title: widget?.title ?? '',
-                snippet: widget.query,
+                snippet: widget.address,
               ),
             );
             return GoogleMap(
