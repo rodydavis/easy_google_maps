@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/easy_google_maps.iml" filepath="$PROJECT_DIR$/easy_google_maps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/easy_google_maps_android.iml" filepath="$PROJECT_DIR$/android/easy_google_maps_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/easy_google_maps_example_android.iml" filepath="$PROJECT_DIR$/example/android/easy_google_maps_example_android.iml" />
+    </modules>
+  </component>
+</project>
