@@ -26,6 +26,7 @@ class EasyGoogleMaps extends StatefulWidget {
 
 class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
   Completer<GoogleMapController> _controller = Completer();
+  final geo = Geolocator();
 
   @override
   void didUpdateWidget(EasyGoogleMaps oldWidget) {
@@ -41,7 +42,7 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
 
   Future _goToLoc(String address) async {
     final GoogleMapController controller = await _controller.future;
-    final _places = await Geolocator().placemarkFromAddress(address);
+    final _places = await geo.placemarkFromAddress(address);
     if (_places != null && _places.isNotEmpty) {
       final _place = _places?.first;
       final _latLang = LatLng(
@@ -71,7 +72,7 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
       width: widget?.width,
       height: widget?.height,
       child: FutureBuilder<List<Placemark>>(
-        future: Geolocator().placemarkFromAddress(widget.address),
+        future: geo.placemarkFromAddress(widget.address),
         builder: (_, snapshot) {
           if (snapshot.hasData) {
             final _place = snapshot?.data?.first;
