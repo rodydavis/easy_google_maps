@@ -9,16 +9,14 @@ environment:
   sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
+  easy_web_view: any
   flutter:
     sdk: flutter
-  google_maps_flutter: ^1.2.0
-  # geolocator: ^7.0.0-nullsafety.5
-  # geocoding: ^1.0.1
-  geolocator: ^5.3.2+2
-  easy_web_view: ^1.4.0-nullsafety
+  geolocator: any
+  google_maps_flutter: ^2.0.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter:
+flutter: null
